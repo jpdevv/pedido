@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceitas?</title>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+            height: auto;
+            width: auto;
+        }
+        html {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body {
+            background-image: linear-gradient(45deg, red, rgb(173, 0, 0));
+            background-attachment: fixed;
+            height: 97dvh;
+            width: 100dvw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main {
+            background-color: white;
+            max-width: 400px;
+            max-height: 500px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 18px rgb(129, 0, 0);
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #sim {
+            background-color: red;
+            height: 40px;
+            width: 60px;
+            border-radius: 8px;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            margin-left: -70px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #nao {
+            position: absolute;
+            background-color: red;
+            height: 40px;
+            width: 60px;
+            border-radius: 8px;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="painel">
+                <h1>Aceita namorar comigo?</h1>
+                <img src="https://gifman.net/wp-content/uploads/2019/06/ursinho-fofo-apaixonado.gif" alt="Namora comigo">
+                <h2>Aceita?</h2>
+                <button onclick="sim()" id="sim">Sim!</button>
+                <button onmouseover="fuja()" id="nao">Não!</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function fuja() {
+            const botaoNao = document.getElementById('nao');
+            let larguraJanela = window.innerWidth;
+            let alturaJanela = window.innerHeight;
+            let maxX = larguraJanela - botaoNao.offsetWidth;
+            let maxY = alturaJanela - botaoNao.offsetHeight;
+            let aleatorioX = Math.floor(Math.random() * maxX);
+            let aleatorioY = Math.floor(Math.random() * maxY);
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+        function sim() {
+            window.alert("Parabéns! Você fez uma ótima escolha! 💖❤");
+        }
+    </script>
+</body>
+</html>
